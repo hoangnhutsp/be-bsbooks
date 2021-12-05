@@ -15,7 +15,7 @@ import { sessionMiddleware } from "./middlewares/session.middleware.js"
 
 import cartRoutes from './routes/cart.js'
 import productRoutes from './routes/product.js';
-import userRouters from './routes/user.js'
+// import userRouters from './routes/user.js'
 import evaluateRouters from './routes/evaluate.js'
 import categoryRoutes from './routes/category.js'
 import invoiceRoutes from './routes/invoice.js'
@@ -140,7 +140,7 @@ server.listen(PORT, () => {
 //         server.listen(PORT, () => {
 //             console.log(`Server running on port ${PORT}`);
 //         })
-//     })
+//     }
 //     .catch((error) => {
 //         console.log(error.message)
 // });
