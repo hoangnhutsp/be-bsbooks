@@ -56,23 +56,23 @@ app.use(cors({credentials: true, origin: "*"}))
 
 const PORT = process.env.PORT || 5000;
 
-const CONNECTION_URL = process.env.URL_MONGODB;
+// const CONNECTION_URL = process.env.URL_MONGODB;
 
-const dbOptions = {
-    useNewUrlParser: true, 
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-}
+// const dbOptions = {
+//     useNewUrlParser: true, 
+//     useUnifiedTopology: true,
+//     useFindAndModify: false,
+// }
 
-app.use(session({
-    secret: 'some secrec',
-    resave: false,
-    saveUninitialized: true,
-    store: MongoStore.create({ mongoUrl: CONNECTION_URL }),
-    cookie: {
-        maxAge: 1000 * 60 * 60 * 24 
-    }
-}))
+// app.use(session({
+//     secret: 'some secrec',
+//     resave: false,
+//     saveUninitialized: true,
+//     store: MongoStore.create({ mongoUrl: CONNECTION_URL }),
+//     cookie: {
+//         maxAge: 1000 * 60 * 60 * 24 
+//     }
+// }))
 
 
 // io.on('connection', socket => {
@@ -110,7 +110,7 @@ app.use(session({
 //     })
 // })
 
-app.use(sessionMiddleware);
+// app.use(sessionMiddleware);
 
 // app.use('/user', userRouters)
 // app.use('/cart', cartRoutes)
