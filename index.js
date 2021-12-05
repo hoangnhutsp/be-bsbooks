@@ -15,7 +15,7 @@ import { sessionMiddleware } from "./middlewares/session.middleware.js"
 
 import cartRoutes from './routes/cart.js'
 import productRoutes from './routes/product.js';
-// import userRouters from './routes/user.js'
+import userRouters from './routes/user.js'
 import evaluateRouters from './routes/evaluate.js'
 import categoryRoutes from './routes/category.js'
 import invoiceRoutes from './routes/invoice.js'
@@ -111,7 +111,7 @@ io.on('connection', socket => {
 })
 
 
-// app.use('/user', userRouters)
+app.use('/user', userRouters)
 app.use('/cart', cartRoutes)
 app.use('/evaluate', evaluateRouters)
 app.use('/product', productRoutes);
@@ -122,7 +122,6 @@ app.use('/address', addressRoutes);
 app.use('/invoice', invoiceRoutes);
 app.use('/admin', adminRouter);
 app.use('/notification', notificationRouter);
-app.use('/test', testRouter);
 
 
 app.get('/', (req, res) => {
