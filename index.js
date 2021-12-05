@@ -113,17 +113,17 @@ app.use(session({
 // app.use(sessionMiddleware);
 
 // app.use('/user', userRouters)
-// app.use('/cart', cartRoutes)
-// app.use('/evaluate', evaluateRouters)
-// app.use('/product', productRoutes);
-// app.use('/category', categoryRoutes);
-// app.use('/recently_viewd', recentlyViewd)
-// app.use('/upload_image', uploadImageRoutes);
-// app.use('/address', addressRoutes);
-// app.use('/invoice', invoiceRoutes);
-// app.use('/admin', adminRouter);
-// app.use('/notification', notificationRouter);
-// app.use('/test', testRouter);
+app.use('/cart', cartRoutes)
+app.use('/evaluate', evaluateRouters)
+app.use('/product', productRoutes);
+app.use('/category', categoryRoutes);
+app.use('/recently_viewd', recentlyViewd)
+app.use('/upload_image', uploadImageRoutes);
+app.use('/address', addressRoutes);
+app.use('/invoice', invoiceRoutes);
+app.use('/admin', adminRouter);
+app.use('/notification', notificationRouter);
+app.use('/test', testRouter);
 
 
 app.get('/', (req, res) => {
