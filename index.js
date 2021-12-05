@@ -57,6 +57,7 @@ app.use(cors({credentials: true, origin: "*"}))
 const PORT = process.env.PORT || 5000;
 
 const CONNECTION_URL = process.env.URL_MONGODB;
+
 const dbOptions = {
     useNewUrlParser: true, 
     useUnifiedTopology: true,
@@ -74,40 +75,40 @@ app.use(session({
 }))
 
 
-io.on('connection', socket => {
-    socket.on('joinRoom', token => {
-        const gettoken = token
-        jwt.verify(gettoken, SECRET, (err, user) => {
-            if(err) socket.emit('accept', {message: "wrong verify token"})
-            else{
-                let userId = user.id
-                socket.join(userId);
-            }
-        })
-    });
-    socket.on('addNotification', async data => {
-        const token = data.token;
-        try {
-            jwt.verify(token, SECRET, (err, user) => {
-                if (!err) {
-                    const title = data.title;
-                    const description = data.description;
-                    const id_user = data.id_user;
-                    const image = data.image;
-                    const _id = data._id;
-                    io.to(id_user).emit('ServerSendNotification', {image, title, description, _id})
-                };
-            })
-        } catch (error) {
+// io.on('connection', socket => {
+//     socket.on('joinRoom', token => {
+//         const gettoken = token
+//         jwt.verify(gettoken, SECRET, (err, user) => {
+//             if(err) socket.emit('accept', {message: "wrong verify token"})
+//             else{
+//                 let userId = user.id
+//                 socket.join(userId);
+//             }
+//         })
+//     });
+//     socket.on('addNotification', async data => {
+//         const token = data.token;
+//         try {
+//             jwt.verify(token, SECRET, (err, user) => {
+//                 if (!err) {
+//                     const title = data.title;
+//                     const description = data.description;
+//                     const id_user = data.id_user;
+//                     const image = data.image;
+//                     const _id = data._id;
+//                     io.to(id_user).emit('ServerSendNotification', {image, title, description, _id})
+//                 };
+//             })
+//         } catch (error) {
             
-        }
+//         }
         
-    })
+//     })
 
-    socket.on('disconnect', ()=>{
-        console.log(socket.id + ' disconnect')
-    })
-})
+//     socket.on('disconnect', ()=>{
+//         console.log(socket.id + ' disconnect')
+//     })
+// })
 
 app.use(sessionMiddleware);
 
@@ -129,14 +130,19 @@ app.get('/', (req, res) => {
     res.send('HI')
 })
 
-mongoose.connect(CONNECTION_URL, dbOptions)
-    .then(() => {
-        server.listen(PORT, () => {
-            console.log(`Server running on port ${PORT}`);
-        })
-    })
-    .catch((error) => {
-        console.log(error.message)
-});
+
+server.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+})
+
+// mongoose.connect(CONNECTION_URL, dbOptions)
+//     .then(() => {
+//         server.listen(PORT, () => {
+//             console.log(`Server running on port ${PORT}`);
+//         })
+//     })
+//     .catch((error) => {
+//         console.log(error.message)
+// });
 
 
