@@ -75,42 +75,41 @@ app.use(session({
 }))
 
 
-// io.on('connection', socket => {
-//     socket.on('joinRoom', token => {
-//         const gettoken = token
-//         jwt.verify(gettoken, SECRET, (err, user) => {
-//             if(err) socket.emit('accept', {message: "wrong verify token"})
-//             else{
-//                 let userId = user.id
-//                 socket.join(userId);
-//             }
-//         })
-//     });
-//     socket.on('addNotification', async data => {
-//         const token = data.token;
-//         try {
-//             jwt.verify(token, SECRET, (err, user) => {
-//                 if (!err) {
-//                     const title = data.title;
-//                     const description = data.description;
-//                     const id_user = data.id_user;
-//                     const image = data.image;
-//                     const _id = data._id;
-//                     io.to(id_user).emit('ServerSendNotification', {image, title, description, _id})
-//                 };
-//             })
-//         } catch (error) {
+io.on('connection', socket => {
+    socket.on('joinRoom', token => {
+        const gettoken = token
+        jwt.verify(gettoken, SECRET, (err, user) => {
+            if(err) socket.emit('accept', {message: "wrong verify token"})
+            else{
+                let userId = user.id
+                socket.join(userId);
+            }
+        })
+    });
+    socket.on('addNotification', async data => {
+        const token = data.token;
+        try {
+            jwt.verify(token, SECRET, (err, user) => {
+                if (!err) {
+                    const title = data.title;
+                    const description = data.description;
+                    const id_user = data.id_user;
+                    const image = data.image;
+                    const _id = data._id;
+                    io.to(id_user).emit('ServerSendNotification', {image, title, description, _id})
+                };
+            })
+        } catch (error) {
             
-//         }
+        }
         
-//     })
+    })
 
-//     socket.on('disconnect', ()=>{
-//         console.log(socket.id + ' disconnect')
-//     })
-// })
+    socket.on('disconnect', ()=>{
+        console.log(socket.id + ' disconnect')
+    })
+})
 
-// app.use(sessionMiddleware);
 
 // app.use('/user', userRouters)
 app.use('/cart', cartRoutes)
