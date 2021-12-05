@@ -108,7 +108,6 @@ const slicePage = (page, product) => {
 }
 export const getProduct = async (req, res) => {
     try {
-        let tmp = await Product.find();
         const query = req.query;
         const queryString = await initQuery(query);
         const sortString = initSort(query);

@@ -127,22 +127,19 @@ app.use('/test', testRouter);
 
 
 app.get('/', (req, res) => {
-    res.send('HI')
+    res.send('APP OKE :V')
 })
 
 
-server.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-})
 
-// mongoose.connect(CONNECTION_URL, dbOptions)
-//     .then(() => {
-//         server.listen(PORT, () => {
-//             console.log(`Server running on port ${PORT}`);
-//         })
-//     }
-//     .catch((error) => {
-//         console.log(error.message)
-// });
+mongoose.connect(CONNECTION_URL, dbOptions)
+    .then(() => {
+        server.listen(PORT, () => {
+            console.log(`Server running on port ${PORT}`);
+        })
+    })
+    .catch((error) => {
+        console.log(error.message)
+});
 
 
