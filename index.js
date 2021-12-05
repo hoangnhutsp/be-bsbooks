@@ -33,12 +33,12 @@ const app = express();
 
 
 const SECRET = process.env.SECRET;
-
+const URL_CLIENT = process.env.URL_CLIENT;
 
 var server = require('http').Server(app);
 const io = require('socket.io')(server, {
     cors: {
-      origin: "*",
+      origin: URL_CLIENT,
     }
   });
 
@@ -51,7 +51,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(cookieParser());
 
 
-app.use(cors({credentials: true, origin: "*"}))
+app.use(cors({credentials: true, origin: URL_CLIENT}))
 
 const PORT = process.env.PORT || 5000;
 
