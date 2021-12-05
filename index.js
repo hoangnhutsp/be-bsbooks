@@ -21,7 +21,6 @@ import categoryRoutes from './routes/category.js'
 import invoiceRoutes from './routes/invoice.js'
 import adminRouter from './routes/admin.js'
 import notificationRouter from './routes/notification.js'
-import testRouter from './routes/test.js'
 
 
 import recentlyViewd from './routes/recently_viewed.js'
