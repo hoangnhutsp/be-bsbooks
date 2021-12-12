@@ -7,7 +7,7 @@ const notificationSchema = mongoose.Schema({
     },
     image: {
         type: String,
-        default: "http://localhost:5000/default/images/notification.png",
+        default: "https://be-bsbooks.herokuapp.com/default/images/notification.png",
     },
     title: String,
     description: String,

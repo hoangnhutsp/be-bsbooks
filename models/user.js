@@ -32,7 +32,7 @@ const userSchema = mongoose.Schema({
     },
     avatar: {
         type: String,
-        default: "http://localhost:5000/default/images/default-avatar-profile.jpg",
+        default: "https://be-bsbooks.herokuapp.com/default/images/default-avatar-profile.jpg",
     },
     role: {
         type: String,

@@ -184,12 +184,12 @@ export const forgotPassWord = async (req, res) => {
                     Bạn hãy Nhấn vào đây để đổi mật khẩu.
                 </p>
                 
-                <a href="http://localhost:3000/reset-password/${token}" style="background: crimson; text-decoration: none; color: white; padding: 10px 20px; margin: 10px 0; display: inline-block;">DOI MAT KHAU</a>
+                <a href="https://be-bsbooks.herokuapp.com/reset-password/${token}" style="background: crimson; text-decoration: none; color: white; padding: 10px 20px; margin: 10px 0; display: inline-block;">DOI MAT KHAU</a>
             
                 <p>Nếu không nhấn vào bên trên vì một số lỗi kĩ thuật được thì bạn hãy truy cập vào đường dẫn này: 
                 </p>
             
-                <div>"http://localhost:3000/reset-password/${token}"</div>
+                <div>"https://be-bsbooks.herokuapp.com/reset-password/${token}"</div>
                 </div>
                 `
             }

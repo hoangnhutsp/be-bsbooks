@@ -6,7 +6,7 @@ import { nanoid } from 'nanoid'
 
 const DEFAULT_FOLDER_UPLOAD_IMAGE = './public/upload/images'
 const DEFAULT_SIZE_ID_IMAGE = 20;
-const URL_HOST = 'http://localhost:5000/';
+const URL_HOST = 'https://be-bsbooks.herokuapp.com/';
 
 
 const mkdirUploadImage = () => {
