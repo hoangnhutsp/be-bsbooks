@@ -5,12 +5,9 @@ import RolePermission from '../models/role_permission.js';
 
 const Authorization = async (req, res, next) => {
     try {
-        console.log('Authorization');
         let path = req.baseUrl;
         if (req.route.path !== '/') path += req.route.path
-        const {role} = await User.findOne({_id: req.userID});
-        console.log(role);
-
+        const { role } = await User.findOne({_id: req.userID});
         if (role == 'MASTER') return next();
 
 
@@ -22,7 +19,6 @@ const Authorization = async (req, res, next) => {
         if (findPermission === null) return res.sendStatus(403);        
         const rolePermission = await RolePermission.findOne({role, permission: findPermission.name})
         if (rolePermission !== null) {
-            console.log('PASS');
             next();
         }
         else res.sendStatus(403);
