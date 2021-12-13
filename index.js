@@ -11,8 +11,6 @@ const require = createRequire(import.meta.url);
 
 dotenv.config();
 
-import { sessionMiddleware } from "./middlewares/session.middleware.js"
-
 import cartRoutes from './routes/cart.js'
 import productRoutes from './routes/product.js';
 import userRouters from './routes/user.js'

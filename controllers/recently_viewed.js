@@ -17,6 +17,7 @@ export const getRecentlyViewed = async (req, res) => {
             .sort({ createdAt: "desc" })
             .limit(DEFAULT_SIZE_RECENTLY_VIEWED);
 
+        console.log('recentlyViewed');
         console.log(recentlyViewed);
         let recentlyViewedProduct = [];
         for (let i = 0; i < recentlyViewed.length; i++){
