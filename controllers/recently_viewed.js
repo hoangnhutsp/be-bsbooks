@@ -2,14 +2,13 @@
 
 import Product from '../models/product.js';
 import RecentlyViewed from '../models/recently_viewed.js'
-import mongoose from 'mongoose';
 
 const DEFAULT_SIZE_RECENTLY_VIEWED = 4;
 
 export const getRecentlyViewed = async (req, res) => {
     try {
         let id_session = req.sessionID;
-
+        console.log('id_session', id_session);
         const recentlyViewed = await RecentlyViewed
             .find({
                 id_session,
