@@ -10,13 +10,14 @@ export const getRecentlyViewed = async (req, res) => {
     try {
         let id_session = req.sessionID;
 
-        let recentlyViewed = await RecentlyViewed
+        const recentlyViewed = await RecentlyViewed
             .find({
                 id_session,
             })
             .sort({ createdAt: "desc" })
             .limit(DEFAULT_SIZE_RECENTLY_VIEWED);
 
+        console.log(recentlyViewed);
         let recentlyViewedProduct = [];
         for (let i = 0; i < recentlyViewed.length; i++){
             let id_product = recentlyViewed[i].id_product;

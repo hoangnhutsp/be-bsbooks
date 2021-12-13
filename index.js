@@ -124,7 +124,7 @@ app.use('/notification', notificationRouter);
 
 
 app.get('/', (req, res) => {
-    res.send('APP OKE :V')
+    res.send('SERVER RUNNING!!!')
 })
 
 
