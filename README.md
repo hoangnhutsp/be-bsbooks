@@ -21,8 +21,7 @@ npm start
 ## Tech stacks
 
 -   `Node & npm`: Runtime & package manager
--   `ReactJS`: Framework
--   `Redux`: Manage state of website.
+-   `ExpressJS`: Framework
 
 
 ## Git branching model
