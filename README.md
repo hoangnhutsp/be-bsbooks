@@ -3,8 +3,11 @@
 > Deploy at: https://fe-bsbooks.herokuapp.com/
 
 | This repo holds the source code of Frontend in the system
-| Source: https://github.com/hoangnhutsp/bsbooks
 
+> Source: https://github.com/hoangnhutsp/bsbooks
+
+- Backend: https://github.com/hoangnhutsp/be-bsbooks
+- Frontend: https://github.com/hoangnhutsp/fe-bsbooks
 ### Setup this repo to start development
 
 -   Run `npm install` (for the first time setup)
