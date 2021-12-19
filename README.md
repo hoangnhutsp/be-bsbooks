@@ -2,7 +2,7 @@
 
 > Deploy at: https://fe-bsbooks.herokuapp.com/
 
-| This repo holds the source code of Frontend in the system
+| This repo holds the source code of Backend in the system
 
 > Source: https://github.com/hoangnhutsp/bsbooks
 
